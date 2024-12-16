@@ -1,0 +1,1851 @@
+Ship Demo Build Info
+++++++++++++++++++++
+
++  New Feature.
+*  Feature change.
+#  Bug Fix.
+-  Removed a feature.
+
+++++++++++++++++++++
+
+19/10/2004
+Changes for Ship V0052
+
+Coding Changes
+==============
+* Changed default server settings
+* Added surnames of active beta testers to the passenger list
+# pushing no longer hurts players
+# players and AI can no longer be pushed way up in the air
++ players regain a little health while sleeping
+# Stopped Elimination Mode getting stuck
+# Removed white line from Help Screen 2
+# Fixed exploit where player could disconnect and reconnect while in court to avoid the jail sentence
+# Fixed drawing of MFK screen at 1280*1024 and 1600*1200
+# Fixed problem of Madness counter being reset when another player goes mad
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+
+14/10/2004
+Changes for Ship V0051
+
+Coding Changes
+==============
+
+Asset Changes
+=============
+
+Art
+---
+# Removed 2 old player models (patient and whitestripe) to allow new high res model to be precached without causing entity map problems.
+* Updated help screen with new keys
+
+Design
+------
+
+Sound
+-----
+
+
+13/10/2004
+Changes for Ship V0050
+
+Coding Changes
+==============
+# Satchels can now be picked up by a player when a satchel has already been deployed
+* Jail Sentence countdown timer is now displayed on the right below the 'In Jail' icon
+# Madness is no longer paused when player goes to jail so they can die while being arrested or in court or in jail
+# When a player holsters a grenade the pin is put back in, and the timer reset.
+* added 'c' as a default key for MoneyForKill screen - easier to use. 'j' still works
++ Added Server Information Screen - default key to show is 'i'
+* Possible MOTD length shortened in an attempt to reduce overflows
+* ScoreUpdate message shortened in an attempt to reduce overflows
+* Default MOTD shortened and refers to the new Server Information Screen for details of server settings
+# Fixed instances where Elimination Mode would get confused or stuck
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
++ Lowered railing on top deck on Seriphos to allow rockets to be shot over.
++ Fixed some use through walls areas on Volantyne and Redrum.
++ Made chair in library on Volantyne sleepable.
++ The sun faces the correct way on all maps.
+
+Sound
+-----
+
+
+
+07/10/2004
+Changes for Ship V0049
+
+Coding Changes
+==============
+
+* moved mode countdown messages to lower message area
+# Syringes are no longer packed into a dead player's wallet
+# When a quarry changes clothes their hunter must speak to them again to arm the proximity mines
+# Players can no longer pickup just before arrest (resulted in carrying weapons in jail)
+# Poison removed after using bed as well as before - stops player's being repoisoned while healing
+# Sickbay bed heals player slowly as the counter ticks down
+# Poisoned players in prison continue to lose health
+# Show Needs no longer toggled when showing/hiding Help or MFK screens
+# players shouldn't really be playing with weapons while asleep, but if caught they will now be awoken
+# HUD properly reset when player has just died in prison
+* 'Pushing' no longer shown on MFK table
+# fixed placement of Identity, Quarry, Bank and Cash HUD elements for Steam fonts
+# Poison now cured by MrX at the appropriate times for the game mode
+# for any player who is legitimately killed as a Quarry, anyone that they have poisoned is cured
+# Justice messages now cleared on a HUD reset
+# When carrying a satchel or satchel trigger the player no longer automatically wields the new weapon     when picked up
+# Some weapons picked up from dead players didn't always indicate they had ammo correctly - now they do
+# Countdown to map end on scoreboard now displays timer if under 1 minute to go
+# MOTD shortened to avoid overflows
+# There may be a few seconds at the beginning of a new map after a map change where passengers and killers are not listed accurately. This will now resolve itself within 10 seconds.
+# Players will no longer get "stuck" in proximity mines.
+	- They will not explode when pushed
+	- They will not explode when shot
+	- They WILL explode when caught in another explosion
+
+
+Asset Changes
+=============
+
+Art
+---
++ New generic male model.
+
+Design
+------
++ Added a new map - Seriphos.
++ Added spawn points to Volantyne.
++ Changed settings of all bed models to ensure they cannot be destroyed.
++ Altered the lighting in all maps.
++ Increased the door speeds.
++ Made the brig food, drink and entertainment free and removed the bank machines.
++ Converted several entities in Aurora to world brushes to prevent 'too many entities in visible packet list' error.
++ Psychiatrist and Sickbay seperated in Daedalus.
+
+Sound
+-----
++ Added gamestartup.mp3
+
+12/09/2004
+Changes for Ship V0048
+
+Coding Changes
+==============
+# In Hunt mode, the scoreboard now shows the correct role for each player during the Quarry change Sequence.
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+12/09/2004
+Changes for Ship V0047
+
+Coding Changes
+==============
+# Fixed crash with long server name.
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+
+12/09/2004
+Changes for Ship V0046
+
+Coding Changes
+==============
+
+# Fixed Bank Interest messages (wasn't always the right message)
+# AuthenticationManager now clears data when server changes map via
+	- End of timelimit / moneylimit / fraglimit
+	- When server admin runs 'restart'
+	- When server admin runs 'map <mapname>'
+	- When server admin runs 'changelevel <mapname>'
+# Fixed being poisoned just before being killed and still being poisoned after respawn.
+# Fixed money and cash changes when money gets below -$10,000.
+* Attenuated some crossbow sounds.
+# Fixed aggressive behaviour with umbrella sticking between uses.
+# when player is innocently killed they now keep all weapons and cash that they had (this includes any deployed satchels/proximity mines).
+# Innocent killed players drop a small wallet of the same size as non-player shipmates.
+* Shipmate AI - drop much less cash when killed.
+* Players now start with 200 cash and not 500.
+* Mod now appears as "The Ship" in the games section of Steam.
+* Players default name is now "LandLubber".
+# Installer no longer aborts if required registry not found. This allows those that need to
+  to install for dedicated server without steam etc..
+* Radar no longer disappears when only two people.
+* Quarry name and radar dot in Red is now a server variable (mp_showQuarryRed).
++ Quarry Change Sequence added. Time limit from first quarry kill to losing quarry. Then countdown to new quarry assignment.	
++ Added server variable mp_witnessArrestCount (default 1) which allows server to set number of times player is witnessed before arrest (previously 3)
++ Added Help tips while players sleep
+* Fines for repetitive innocent kills increased, but should not overly penalise accidental kills too often.
++ Message sent to Hunter when their quarry is arrested, visits the psychiatrist or the sickbay bed
++ Added Elimination mode along with the original Hunt mode. The quarry loop shrinks until there is only one Hunter left. When you kill your Quarry you get their Quarry as your new quarry. You get a prize when you are the last Hunter and everyone else has been eliminated.
++ Umbrella and syringe now play correct animations when deployed and when attacking.
++ Server Admin of a non-dedicated server can no longer be kicked.
++ Players no longer forget everyone on a Quarry change.
++ Added 2nd help screen - 1st is for game aims, 2nd is for keys
+* Changed AI to only drop random amounts of non-explosive ammo that can be used with current weaponset
+* Changed some messages to be higher priority (important game events) and placed on the HUD above the lower priority ones
+* tweaked timing of arrest from security zones
+* tweaked timing of arrest from witnesses
+* changed scoreboard to show player's role - either passenger or killer
+* changed scoreboard to show game mode after server name (Elminiation or Hunt)
+* changed scoreboard to show player's role as Spectator when spectating
+
+Asset Changes
+=============
+
+Art
+---
+* World syringe is now half the size.
++ Some textures scaled down.
++ New signs added.
+* Weapon selection icons now easier to see which is selected.
++ Added 2nd help screen sprites
+
+Design
+------
++ New map - Volantyne.
++ Map optimisation for Aurora (hint brushes added, etc).
++ Map optimisation for Argo (hint brushes added, etc).
++ Map optimisation for Daedalus (hint brushes added, etc).
++ Map optimisation for HMSRedrum (hint brushes added, etc).
++ Added an amnesty box to dump weapons.
++ Can no longer use toilets through the cubicle wall.
++ Added signs to the maps.
++ Added armchair and television (entertainment need) to upstairs lounge in Argo.
+* Fines have been adjusted.
+* Sentences have been adjusted.
+
+Sound
+-----
+
+
+05/08/2004
+Changes for Ship V0045
+
+Coding Changes
+==============
+# Measures to reduce overuse of pushhands temporarily removed
+# Pushhands strength reduced slightly
+# If you are more than $20,000 in debt you will get removed from the Ship. You will be able to rejoin the next cruise, or another cruise.
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+04/08/2004
+Changes for Ship V0044
+
+Coding Changes
+==============
+# Changed default moneystart in server.cfg to 2500
+* Added more codes for event messages sent to HUD to help reduce network traffic
+# Player stats are now properly reset no matter how the map is changed
+# Money For Kill table now only updates when a Hunter kills their Quarry.
+# Attempted to hide time remaining on scoreboard when it gets corrupted
+# Player can now move when woken by another player
+# Attenuation on weapon pickups reduced
+# Only one "Quarry Changed" message if multiple kills happen at the same time.
+# People are cured of being poisoned only when they are killed OR when a successful Hunter/Quarry Kill occurs.
+
+Asset Changes
+=============
+
+Art
+---
++ Textures rescaled to look better.
+
+Design
+------
++ Weapons added to all maps.
++ Weapon placement changed.
++ AI fixed in Aurora (double door added, more info nodes).
++ Fines for carrying weapons have been reduced (by half mostly).
++ Sickbed now only costs $100.
++ Bribery of the security guard now only costs $2000 and lasts for 2 minutes.
++ Some detail added to all maps (pictures, glass framing). 
+
+Sound
+-----
+
+
+30/07/2004
+Changes for Ship V0043
+
+Coding Changes
+==============
++ Use primary attack button (default: Left mouse button) to select a weapon and take it out, in the usual way.
++ Use secondary attack button (default: Right mouse button) to select a weapon and immediately holster it. You can do this in security areas. The weapon is 'readied' and can be pulled out using the 'Holster' command (default: Middle mouse button).
+* Installer changed to detect required registry key and to display message then abort if not found
+	- reg key created by installing steam and running halflife once through Steam (also creates the folder that The Ship should be installed to)
+# Radar server variables now on by default
+* Removed startup movies from build until they can be played under Steam
+* Removed ClientScheme.res (not needed)
+- Applied server defaults in code, removed listenserver.cfg file.
+# Setting the length of game in the front end interface now works correctly.
+# Improved colours on Steam interface to be more legible
+# Added missing settings in server settings and removed unused ones
+# Fixed MoneyForKill screen to display all of "MONEY FOR NEXT KILL"
+# Scoreboard - changed case of column headings for better spacing
+# Fixed being able to kill yourself in jail after 'suiciding' with the 'kill' command
+# Func items are now free for use by others if a player disconnects while using them
++ Added ship icon to steam interface
+* High quality models on by default
+# Missing crosshairs now back in
+# Fixed concatenated witnessing messages
+# Updated Steam interface background
+
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+
+29/07/04
+Changes for Ship V0042
+
+Coding Changes
+==============
+* Removed excess 'Deny Select' noises when using "thin-air".
+* Attenuated any other 'Deny Select' noises so they cannot be heard from far away.
+# hlversion fixed
+# psx.cfg no longer executed by default so joystick is now off
+	- should stop uncontrollable spinning
+# updated missing entries in key configuration files
+# stopped forcing key configurations - game now ships with basic config.cfg.
+	- custom key changes will now be saved for next game
+- All cheat impulse commands disabled, regardless of the value of sv_cheats.
+- Client 'model' command disallowed. Must change your model in game specific ways.
+* Number of chat lines reduced, and on-screen delay reduced
+# Helpscreen, Needs and MFK screen no longer stay on screen
+	- press bound key to show
+	- press same key again to hide
+# Helpscreen updated and drawn correctly
+* Footsteps are now off by default
+* Player starting money now defined as a server variable
+	- default now set to 2500
+* Due to a recession the Bank has become less generous
+	- You can always withdraw all of your positive bank balance
+	- If you are overdrawn the Bank is happy to extend your overdraft, but only till you
+	have $500 in cash
+	- If you become more than $10,000 overdrawn the Bank will not help you at all.
+	- Respawning players with less than -$10k do not get 500 as they respawn.
+* Disabled spec_mode command except in debug
+# Player wallets are now cleared up after a disconnection
+	- stops cash exploits in conjunction with reduced bank overdrafts
+* Radar now indicates known passengers (other than quarry) in black
+	- can be switched on/off on a server with mp_radarshowknown (default is on)
+	- the whole radar can be switched on/off with mp_radar (default is on)
+* Radar is NEVER shown to the players of a 2-person quarry loop regardless of server radar settings (too easy to track hunter)
+* Reduced frequency of radar updates to try and reduce network traffic
+* Radar now completely hidden when asleep
+* Sleeping players are now woken when spoken to
+* Sleeping players are now woken when they take damage
+* Money for kill weapon ratings can now go as low as 0 (was 2000)
+# Game descriptor on steam server browser now says 'The Ship' instead of 'Half-Life'
+* Added codes for event messages sent to HUD to help reduce network traffic
+* Changed several messages to use these codes and added some new messages
+* Pushhands strength reduced by half
+* Measures to reduce overuse of pushhands added
+* Removed voicechat sprite from above talking player's head
+* Changed chat to "Player Chat" and Team Chat to "Identity Chat"
+	- 'y' to talk as your Player Name
+	- 'u' to talk as your current Identity
+	- NB pressing 'u' will still say 'say_team' at top of your screen (hardcoded in engine ?)
+* Coloured Identity name in "Identity Chat"
+# Fixed server crashes with players rejoining
+* Players that 'kill' themselves in jail will be sent back to jail when they respawn to continue their sentence
+* 'kill' command can only be run once every 60 seconds
++ Added new Cause of Death code so that we can tell easier how a player died and therefore when to change quarry.
++ Added management code for the Hunter/Quarry loop
+* Quarries only change when:
+	- at the start of the map there is a grace period where no-one has a quarry, then after a small amount of time everyone will get one
+	- a Hunter kills their Quarry
+	- a Quarry leaves the game (the Hunter then receives the leaving Quarry's quarry), no other Quarries change.
+	- if there is only one person in the game, quarries are only changed once another player joins. Similar to map change procedure.
++ Added Authentication Manager
+	- When Internet players leave server their bank balance and jail time are saved with their Steam ID
+	- When Internet players rejoin a server during the same map, their original bank balance is reapplied and they are taken to jail if they had been in jail when they quit
+	- This will NOT work for any players on a LAN only server
+	- This will NOT work for the person who starts an Internet server
+	- Reliability is subject to Steam authentication
+* Player names now reported in kill messages (Innocent killed, Killed by Quarry etc..)
+* Added SteamID to server access log
+# Running into ship's engine now recognised - funeral costs now applied
+* Half rewards for killing a quarry without knowing their name
+* Satchel (handbag/wallet) is no longer recognised as an offensive weapon so safe to carry in security zones and passengers cannot witness you with it
+* Increased player walk speed by 20%
+* Increase AI walk speed by 20%
+* On selection of a weapon you 'holster' it by default. You must then press the 'Holster' key to take out the weapon you wish to use. This prevents you from taking out a weapon when you don't mean to.
+* Changed tripmines
+	- Can deploy even if you don't know your quarry
+	- are not automatically removed at a quarry change
+
+
+Asset Changes
+=============
+
+Art
+---
++ Crowbar now has new hands in the V model
++ Sony laptop texture fixed
++ Added three concept character pictures to the WAD
++ Added Steam interface scheme
+* All models in game recompiled to have an increased walk speed
+
+Design
+------
++ Extra weapons added to the map (daedalus)
++ Lighting added to bank and outside sickbay (daedalus)
++ Shelving added (daedalus)
++ Gib shooters for grates fixed (daedalus)
++ Moved proximity mine in bank so you can pick it up easier (hms redrum)
++ Can now get pyschiatrist help from doctor as well as desk (hms redrum)
++ Shouldn't be able to get stuck in toilets or sinks anymore (all maps)
++ Clipping around the ship fixed (all maps)
++ New Map - Aurora added
++ New Map - Argo added
+
+25/06/04
+Changes for Ship V0041
+
+Coding Changes
+==============
+# Crossbow now has the correct fines and sentences associated with it.
+# Getting arrested while doing some other activity now correctly resets that activity and allows people to talk to you.
+# Fixed pickup of phantom satchel charges from weaponboxes
+* Changed #SCORE to MURDERS on scoreboard
+* Changed #DEATHS to MURDERED on scoreboard
+
+Asset Changes
+=============
+
+Art
+---
+* Added bankteller display background for resolutions 1152 and 1280
+* Changed scoreboard colours
+* Changed MOTD colours
+* Added new Ship.ico
+
+Design
+------
+* Changed running fatigue tick rate from 0.5 to 0.85 sec
+* Changed weaponFines and weaponSentences for the Crossbow. These now work.
++ Added butler to bank.
++ Access to bribe security now available.
+* Poison now takes 15 seconds to kill them.
+* Sentences lowered a little
+* Money for kill initial spread much closer together.
+
+Sound
+-----
+# reduced attenuation on sanity sounds
+
+23/06/04
+Changes for Ship V0040
+
+Coding Changes
+==============
+* Disabled Player Gibs
+
+Asset Changes
+=============
+
+Art
+---
+# added missing models
+
+Design
+------
+
+Sound
+-----
+
+23/06/04
+Changes for Ship V0039
+
+Coding Changes
+==============
+# When released from prison, bank teller display will go away if player had been using the bank
+# Fixed problem with running states when changing betweek normal and crouched
+# No more jogging on the spot when you hold run key down but aren't moving
+- removed w_pushhands from the code.
+
+Asset Changes
+=============
+
+Art
+---
+
++ P,V and W crossbow models
++ V_Satchel_radio
++ P_syringe
++ W_Syringe (scaled up)
++ P, V and W tripmine 
+- W pushhands
+
+Design
+------
+
+Sound
+-----
+
+
+18/06/04
+Changes for Ship V0038
+
+Coding Changes
+==============
+# Fixed problem with decals
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+18/06/04
+Changes for Ship V0037
+
+Coding Changes
+==============
++ Decals no longer appear on ship functional items.
++ Added EF_NODECAL flag which can be set in the effects field of an entities pev.
++ Changed delta.lst by adding one bit to the effects field of the entity_state_t data structure for the EF_NODECAL flag
++ Client now searches for info_intermission entities and points to where it is pointing.
+# When client disconnects their satchels and tripmines now get removed.
+
+Asset Changes
+=============
+
+Art
+---
++ w_pushhands with model tweaks
++ w_satchel (both wallet and handbag)
++ w_shotgun
++ w_crossbow
++ v_crossbow
++ w_umbrella
++ v_umbrella
++ v_Syringe
++ w_syringe with new hands
++ v_rpg with new hands
++ v_9mmhandgun (now revolver)
++ w_9mmhandgun (now revolver)
++ v_grenade with new hands
++ w_proximityMine
++ p_shotgun
++ v_shotgun
++ w_shotgun
+
+
+Design
+------
+
+Sound
+-----
+
+15/06/2004
+Changes for Ship V0036
+
+Coding Changes
+==============
+* Disabled TeamPlay on dedicated server
+* Shotguns no longer eject shells, because they are blunderbuss's.
+* Blunderbuss(shotgun) no longer has double shot secondary attack.
++ Server now logs connects and disconnects to logs/<servername> access.log
+- Magnum 357 removed
+* Glock changed to Service Revolver.
+* Proximity suitcase now spawns as a handbag or wallet, you drop the type you picked up first.
+* When a player dies they drop a wallet or handbag depending on model type.
+* Service Revolver (old glock) now holds 6 shots, and will not reload when full.
+- Removed shell from glock.
+# Everyone knows themselves on Quarry change and nobody else.
+
+
+Asset Changes
+=============
+
+Art
+---
++ Added new umbella world and first person models
++ Added and renamed the magnum box of shells to be the handgun shells.
++ Added vending machine and bank machine textures.
+* Added new design for BankTeller
++ Added the world, third and first person models for handbag and wallet.
+
+Design
+------
++ Removed magnums and ammo.
+
+Sound
+-----
+
+
+
+09/06/2004
+Changes for Ship V0035
+
+Coding Changes
+==============
+# Fixed problem where could be arrested with satchel remote when you had previously picked up 2 satchel charges
+# Syringe is now 'discarded' after use or after being broken.
++ If logging is switched on game will write final scores to the log
++ Added countdown to game end to the score panel if a timelimit has been set
++ Made radar positioning dynamic at resolutions 800*600 and below depending on needs shown
+# Fixed drawing problem with helpscreen
+# Stopped number keypresses cycling through weapons while using the bank teller
+* Disabled deathmessages that were obscured by new HUD design
+# Fixed problem of early release from Jail
+# Fixed problem of running state when respawned
+# Fixed occasional bug of not being able to exchange identities
+# Fixed crash on key input when gViewPort didn't exist
+# Fixed crash on map cycle: trying to create sanity entity before world fully made
+# Fixed crash on map cycle: trying to create security manager entity before world fully made
+# Fixed crash on client disconnect - timing issue when trying remove client from sanity list, sanity object did not exist.
+# Sanity is no longer processed when in intermission between map cycles.
+* Radar/witness counts no longer shown when in Jail
+* Sleeping players are now woken when the game ends !
+# Fixed if you set a Money Limit that is less than the starting amount of money, to be a minimum of 20,000.
++ MOTD text now has tokens in it which takes the information entered in the frontend to be the correct values for Money Limit, Kill limit and Time limit.
+
+Asset Changes
+=============
+
+Art
+---
++ Shower models added.
++ New textures (vending machines,security door etc.)
+* Changed screenshot in video options to be more recent
+* Updated needbar sprites
+* Moved radar down 50px to accomodate new needbars
++ Added Sink and Bed models.
+* Added new HUD design for Identity/Quarry
+* Added new HUD design for Radar
+* Updated Helpscreen
+	Added N for Needs
+	Added Shift for Run
+	Removed Place holder description text.
+* Added new background for Weapon money table
+* Added new HUD design for security
+* Added new HUD design for Cash/Bank
+* Added new HUD design for Sanity
+* Changed sprites for weapon pickups and weapon selector
+* Added new security icons, when caught and in jail
+
+Design
+------
++ Cost of security bribe lowered from $5000 to $2500, time increased from 30 to 60 secs.
++ Bank Machine added to the Brig.
++ Anti-Ed glass fitted to the bank and boutique (i.e. unbreakable - do your worst Ed).
++ New map added - Daedalus.
++ Added stuff to Daedalus brig.
+
+Sound
+-----
+
+
+
+01/06/2004
+Changes for Ship V0034
+
+Coding Changes
+==============
++ Added code to use the Prison Food, Prison Water and Prison Fun functional needs items.
++ Running now increases your fatigue quicker than walking.
++ Added winning conditions for Max Money, Max Kills and TimeLimit.
+* Needs HUD updated
+	graphics are placeholders for now
+	Needs are now sorted by greatest need
+	Needs below 50 are not shown unless currently changing
+	All needs can be shown by holding the 'N' key down
+# Judge now removes any satchel charges that have been dropped when arrested
+* Player identities not shown on the scoreboard except at the end of the game
+* Scoreboard no longer shows player identities during the game, but only at the end of the game
+# Can now sleep correctly when running.
+
+
+Asset Changes
+=============
+
+Art
+---
++ Added new HUD sprites
+
+Design
+------
++ Fixed toilets, just try and push them now Ed
++ Added Prison Food, Water and Fun to the FGD
++ Added needs_FatigueRunTickTime to playerneeds.cfg
+
+Sound
+-----
+# Changed attenuation on a range of sounds
+
+
+27/05/2004
+Changes for Ship V0033
+
+Coding Changes
+==============
+
+Asset Changes
+=============
+
+Art
+---
+# Added missing toilet model
+
+Design
+------
+
+Sound
+-----
+
+
+27/05/2004
+Changes for Ship V0032
+
+Coding Changes
+==============
+# Fixed listen server when client joins and receiving a message before
+properly initialised.
+# Fixed psychiatrist having a much quicker effect. 
+# Fixed Sanity bar going away into nowhere.
+* Changed players to walk by default and run by modification key (SHIFT).
+* Changed crouching walk speed to match run and walk speeds above.
+# Fixed missing sound file reference.
+* After a Quarry Change, everyone forgets the names of who they have met (AI included)
+# Fixed crash on listen server (timing of client messages)
+# Fixed crash on dedicated server (player witnessing issue)
++ AI now regenerate some health over time
+# Poison now takes effect, even when arrested
+
+Asset Changes
+=============
+
+Art
+---
++ New textures added
+
+Design
+------
++ Reduced r_speeds
++ Added syringe
++ Added antidote
++ Improved the Brig
++ Added CCTV security zones
++ Added one way glass to restaurant
++ Added new toilet models
++ Added some textures
+
+Sound
+-----
+
+21/05/2004
+Changes for Ship V0031
+
+Coding Changes
+==============
++ Added Umbrella weapon
++ Added Syringe weapon
++ Added PoisonInjected so that poison takes time to take effect.
+* Crowbar back to original
++ weaponDamage.txt added for Ship specific weapons damage
++ You get arrested/witnessed only if you use the umbrella aggressively
++ Added Umbrella and Syringe to Money for Kill
++ Added Umbrella and Syringe to Possession fines and sentences
++ Added Umbrella and Syringe to Mr X messages
++ Added Umbrella and Syringe to Sanity
++ Added Umbrella, Syringe and PushHands to the Spectator model loading in the client
+* Fixed the message registration and enumeration for money for kills to allow
+  addition of new weapons without any trouble
+* Changed Witnessing/Arrest system.
+	- New HUD "have been witnessed" counter (Green)
+	- When your "have been witnessed" counter reaches 3 times you will be arrested
+	- If one of your witnesses dies or is killed your "have been witnessed" counter will decrease by 		the number of times they have witnessed you
+# Fixed Identity problems with who knows who
+* Changed security zones to count player inside them only when player's origin is also inside
+* Changed AI responses to react to sounds more often and turn to face the source
+# Fixed problem with sanity counter not always pausing in Jail
+
+
+Asset Changes
+=============
+
+Art
+---
++ Textures - Kitchen floor, curtains, pool floor, wallpaper upstairs etc.
++ Fixed sky textures.
+
+Design
+------
++ Cut out doorway to improve r_speeds (map optimisation)
++ Added Umbrella hud .spr files
++ Added Umbrella entry to FGD
++ Added Syringe entry to FGD
++ Added Umbrella and Syringe event files
++ Added Umbrella and Syringe sprite text files
++ Added Umbrella v_, w_, and p_ mdl files to models
++ Added Syringe v_, w_, and p_ mdl files to models
++ Updated weaponFines, weaponSentences, moneyforkill config (.cfg) files
+* Crowbar v_, w_ and p_ mdl files back to crowbar original
+
+Sound
+-----
++ Added 2 possible sounds when using sickbay bed
++ Added 3 possible sounds when using psychiatrist
++ Added more sounds to convey AI reactions
+
+
+07/05/2004
+Changes for Ship V0030
+
+Coding Changes
+==============
+* When looking at other players they now tilt an eighth as much as they used to.
+* Proper Jane and John model names used and pre-cached. All other models renamed.
+# Moving from 3rd person to 1st person crosshair now reappears correctly.
+
+Asset Changes
+=============
+
+Art
+---
++ Added John.mdl and Jane.mdl.
+* Renamed the other models to be more descriptive.
++ Added more textures (crew area, hull)
+
+Design
+------
++ Lighting improvements
++ Fix for spy hole behind picture
+
+Sound
+-----
+
+
+
+04/05/2004
+Changes for Ship V0029
+
+Coding Changes
+==============
+
++ Code changed to compile under Linux
+# Changed so that hunter and quarry won't know each other after quarrys change
+
+Asset Changes
+=============
+
+Art
+---
+
+Design
+------
+
+Sound
+-----
+
+
+03/05/2004
+Changes for Ship V0028
+
+Coding Changes
+==============
+* Removed some UI parts from the Movie making build
+
+Asset Changes
+=============
+
+Art
+---
+Added a load of new textures to the wad (lounge, bank,corridor,cabin).
+Added two new models (generic male and female).
+
+Design
+------
+Removed the lift in the kitchen, improved the lighting, altered the bank.
+
+Sound
+-----
+
+
+14/04/2004
+Changes for Ship V0027
+
+Coding Changes
+==============
+
+Asset Changes
+=============
+
+Art
+---
++ ShipDemo.wad changed to incorporate hall and toilet textures.
+
+Design
+------
+
+Sound
+-----
+
+23/2/2004
+Changes for Ship V0026
+
+Coding Changes
+==============
++ Funeral charge of 1000 added for self kills (weapons, falling, needs, madness)
++ Toilets now flush after use.
+* Delay before respawn increased by 2 seconds falling...)
+* Players now start with $500 after death (withdrawn from their bank account)
+# Ambulance icons no longer appear on AI death or spawning.
+# Death messages to the console now correctly report death reason (needs, madness, 
+# Sleeping sounds can only be heard when much closer to the sleeper
+# Heartbeat stops when you are killed.
+# Sanity Bar reset immediately.
+# No more multiple heartbeats.
+# Security HUD no longer updated with witness counts when player is asleep
++ Added radar
+	: range is limited to a square around the player
+	: range is limited to approximately 1 floor in height
+	: all AI and players are represented by a white x
+	: when you have met your quarry their marker will change from white to red
+	: if your quarry is known but out of range they will be represented by a green x to indicate direction. (unless in line of sight in which case it will remain red)
+	: if quarry's green x appears to be within the range of the radar then they must be above or below you.
+	: any dropped satchels waiting for detonation will be represented by a blue x
+	: radar will not be active while player sleeps
++ Enabled joystick control so that Playstation controller can be used on PC via USB adapter
+	(configuration should be loaded by default. Type 'exec psx.cfg' at console to reload)		
++ Enabled joystick control so that XBox controller can be used on PC via USB adapter
+	(configuration can be loaded by typing 'exec xbox.cfg' at the console)
+
+Asset Changes
+=============
+
+Art
+---
++ Added Chat and Voice Chat to Help Screen. 
++ Added radar sprite
+
+Design
+------
++ Added a new map called 2deck which has two decks. Aiming to show grander scale potential of ship and provide a large area for gameplay testing. Due to the size the detail level is low. Map includes all needs and weaponry.
+
+Sound
+-----
++ Added flushing sound.
+
+21/01/2004
+Changes for Ship V0025
+
+Coding Changes
+==============
+- Sanity bar now flashes when changing.
+- Sound effects added to sanity changes.
+- Fixed some need icons appearing in mid-air.
+- Sentences for carrying grenades were not being applied. Fixed.
+- AI now run 40% of the time.
+- AI more unpredictable from the start.
+- AI talk less and move more.
+- AI can now use the bank, change clothes and go to the doctor.
+- Changed Chat area to display 10 lines instead of 5.
+- Changed Chat area to remove messages every 10 seconds rather than every 5.
+- Added Mr X announcements to suggest best weapon to use shortly after each quarry change.
+- Bank Interest charges and messages now occur every 5 minutes rather than every 90 secs.
+- Players may now interrupt some, but not all needs by pressing their "use" key again while the need is processing
+- Upon being witnessed, the player will no longer be teleported to court immediately
+	a) player will be frozen, become invulnerable and glow red to incdicate they have been caught
+	b) witness will not be frozen but will glow blue to show player how/where they were seen.
+	c) After 3 seconds player will be taken to jail to begin their sentence and both
+	   glowing effects will be removed.
+- Fixed bugs with coffee, sleeping and waking so that you don't get stuck in deep sleep or wake inappropriately
+- Changed Proximity Mines so that they are all reset upon a Quarry Change
+- Added Help Screen which is shown via the 'h' key.
+- Added Weapon Ratings screen (separated from Scores screen) shown via the 'j' key.
+- Increased grenade damage
+- Stopped exploding weapons using damage multiplier to the head.
+
+Asset Changes
+=============
+- 
+
+Art
+---
+- Added Help Screen sprites.
+- Added Weapon Rating background sprite.
+
+Design
+------
+- 
+
+Sound
+-----
+- Added Sanity sounds: breathing, heartbeat, sigh, about to pop exclamation, feeling better.
+
+
+14/01/2004
+Changes for Ship V0024
+
+Coding Changes
+==============
+- Fixed bug which prevented a player from waking up when sleeping for a long time.
+
+Asset Changes
+=============
+- 
+
+Art
+---
+- 
+
+Design
+------
+- 
+
+Sound
+-----
+- 
+
+12/01/2004
+Changes for Ship V0023
+
+Coding Changes
+==============
+- Updated ShipMate AI to use the new destination hint nodes. AI now disperse better.
+- Removed bug that caused waking fade in when drinking coffee
+- Added yawn to wake sequence
+- Stopped grenade rolls and bounce being heard everywhere
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Added new destinations to the FGD for hint nodes: lounge, restaurant, generic, deck, 
+toilet, cabin and corridor.
+- allows Last Man Standing option to be chosen Advanced Options when creating a game.
+
+Sound
+-----
+- 
+
+07/01/2004
+Changes for Ship V0022
+
+Coding Changes
+==============
+- moved security hud elements down a little to unobscure death messages
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Added bookcase to the Brig.
+- Added large cupboard you can hide in to one of the cabins.
+- Changed some info nodes to try and improve the AI pathfinding.
+
+Sound
+-----
+- 
+
+
+18/12/2003
+Changes for Ship V0021
+
+Coding Changes
+==============
+- Added default cost to entries eat, drink and boredom. Values can be changed in playerneeds.cfg.
+- Added need choice entries for Eat: snack, fast food, breakfast, lunch, dinner, 3 course meal, Drink: Water fountain, Can, bottle, Coffee, Alcohol, hip flask and Boredom: Game Pool, Reading, Gift, Alcohol, Flirting and Sex. Values can be changed in playerneeds.cfg.
+- Slowed player walk to be more like the AI.
+- Fixed identity so you cannot 'unknow' your own identity when changing costume or dying.
+- Changed food vending text.
+- Players now start with 500 cash in their hands, as well as the 10000 in the bank.
+- Fines for carrying grenades were not being applied. Fixed.
+- Passenger and Crew security zones disabled.
+- Shipmates and Players now act as passenger security and you will be arrested after a very short delay for carrying a lethal weapon if they see you. (unless they are your Hunter or Quarry)
+- Changed Security HUD elements. One number now appears below the 'eye' - is the number of people that can currently see you.
+- Changed Security HUD eye so that it is safe to carry weapon when blue, and not safe when red (except in the instance where your hunter pulls a gun on you and you only have one witness - i.e. the Hunter)
+- New HUD information message to indicate why you were arrested.
+- Fixed Bank Teller entry of amount to deposit/withdraw.
+- Fixed spectator mode - type spectate at console. To rejoin game, type disconnect then retry in the console - your HUD will display needbars and security info for the player being watched if tracking a player.
+- Proximity mines cannot be deployed until your known quarry has been tagged.
+- Hand grenades are now timed for 3 seconds.
+- Judge now correctly reports Arrest for Trespass rather than carrying weapon in crew zone.
+
+Asset Changes
+=============
+
+Art
+---
+- Present is now dropped as a briefcase - looks like a briefcase before picking up - and looks like the normal satchel charge in your hands and in the hud.
+-
+
+Design
+------
+- Changed ShipDemo.fgd for needs to allow correct selection of different need types. e.g. Eat need can be:
+snack, lunch, dinner, etc
+- playerneeds.cfg has values added for all these different need types. They can be changed from here without
+recompiling the map. They have been updated.
+- Water fountain, coffee machine, alcoholic drinks and three course meals all added to the map. 
+- Food and drink now costs and has different effects according to type.
+- Removed some old security zones.
+- Rebalanced Needs, changed side effect of three course meal to include drink
+- Reduced weapon fines and sentences
+- added 1deck overview files for spectating
+- Security added to just visiting jail.
+
+Sound
+-----
+- 
+
+9/12/2003
+Changes for Ship V0020
+
+Coding Changes
+==============
+- removed hardcoded defaults for corruptSecurity
+- replaced £ in scoreboard with $
+- added $ to Cash and Bank scores in HUD
+- moved security HUD elements for a better layout
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- 
+
+Sound
+-----
+- 
+
+9/12/2003
+Changes for Ship V0019
+
+Coding Changes
+==============
+- Disabled spraypainting.
+- The countdown can now be displayed in different colours. Insane now red.
+- The event text messages in the middle of the screen now have different colours.
+White - information. Blue - hunter/quarry information. Red - Insane.
+- Your quarry name in the middle of the HUD when identified is red.
+- Default deposit amount at bank increased to 1000.
+- 
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Changed all the chests for easier access.
+- Made the lift easier to use.
+- Placed a model in the sick bay to represent the doctor.
+
+Sound
+-----
+- 
+
+5/12/2003
+Changes for Ship V0018
+
+Coding Changes
+==============
+- Satchel charges (Presents) are now cleaned away when the player who laid them dies.
+- Changed the Bank interest on player account balance to 1% every 90 seconds - capped at 500.
+- Sanity now only recovers from insanity when talking to psychiatrist.
+- Sanity now only comes down from seventh heaven when a negative event has occurred.
+- AI corpses can no longer be killed, so extra weaponboxes are not created
+- Changed most green hud colours to blue
+- Fixed weaponswitcher - no more empty grenades. Attempting to fire a weapon with no ammo will force change to pushhands, but weapon can be selected again and dropped if required.
+- weaponboxes no longer fly away when an item is dropped, but land much closer to the feet
+- FuncSickbaybed will no longer accept you for healing if totally unharmed
+- FuncSickbaybed healing time now dependant on state of health (somewhere between 1/3 and full amount of time defined in the map)
+- disabled blood. Exploded players/AI will still gib.
+- enabled voice chat. Hold down 'V' key and talk into microphone. All players should hear you speak. (To test type 'voice_loopback 1' at console to hear yourself).
+- The message to tell you have committed suicide is moved to the exact end of the time of insanity.
+- AI now 'look' before they try to use a near ally. They were using an old 'look' and hence could pick a dead ally. This was causing an intermittant crash.
+- fixed fines and sentences for RPG (was 0 and 0)
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- 
+
+Sound
+-----
+- 
+
+02/12/03
+Changes for Ship V0017
+
+Coding Changes
+==============
+- Fix for switching to pushhands when killed.
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- 
+
+Sound
+-----
+- 
+
+
+02/12/03
+Changes for Ship V0016
+
+Coding Changes
+==============
+- Added code guards to stop sick bay beds, wardrobes, psychiatrists and bank tellers from resetting if they
+do not have a user.
+- No longer switches to weapon picked up if you have no grenades.
+- 
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- 
+
+Sound
+-----
+- 
+
+01/12/03
+Changes for Ship V0015
+
+Coding Changes
+==============
+- No longer arrested for no grenades.
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Small map tweaks.
+
+Sound
+-----
+- Ambient sounds checked in.
+
+01/12/03
+Changes for Ship V0014
+
+Coding Changes
+==============
+- Tripmine activation increased to 2 seconds.
+- Tripmine range reduced by 1/4.
+- Added test in psychiatrist resetByPlayer to make sure there was a patient.
+- Wardrobe resetByPlayer changes view back to first person if killed while changing costume.
+- ProcessSuspect now resets the wardrobe, sick bay bed, psychiatrist.
+- When the primary need is finished the player has control enabled. Not when any need reaches zero.
+- Added functions to return the needs to background rates. Used when the bed is used.
+- Pushhands now does 1 damage.
+- 
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Last minute fixes and polishing.
+- Ambient audio added to relevant locations.
+
+Sound
+-----
+- Replaced crowbar sounds with umbrella sounds
+- Ambient audio added to relevant locations.
+
+28/11/03
+Changes for Ship V0013
+
+Coding Changes
+==============
+- Hunter will now receive a quarry died bonus when quarry dies of needs or kills self.
+	- this will result in a shuffle of all quarrys.
+- Weapons with no ammo can now be selected so that they can be dropped
+	- this will mean that you will not autoswitch weapons when you run out of ammo
+- players now scream when hurt/pushed etc..
+- added FuncCorruptSecurity, for a price security zones will ignore you for a certain time
+- added mp3 player. Create directory 'mp3' in 'sound' directory then from console playmp3 mymp3.mp3
+- no more sounds of broken glass when glass is "pushed"
+- you can no longer talk to yourself by looking to the sky !
+- changed all money references to be $ (dollars)
+- wardrobe costs are no longer hardcoded
+- concussion effect removed from fatigue
+- drowsy effect happens at a lower level of fatigue
+- concussion effect added when hurt (low level when <=50, higher level when <=25)
+- screen fades to black when you sleep and fades in when you wake
+- screen fades in from black when you respawn after death
+- screen now flashes red when you are hit
+- minimum money for kill is now 2000
+- needbars moved up on the HUD
+- weapon selection moved right on the HUD
+- icon for selecting a weapon with no ammo now glows red rather than yellow
+- code for using objects has now changed. You may need to stand a little closer than before
+- fix for rendering invisible func entities. Correct initialisation.
+- re-enabled followcam in spectator mode.
+- pushhands can no longer be dropped
+- made weapon names more friendly and appropriate
+- pushhands will now give a reward (or penalty !) to the killer
+- All needs calls updated so that they have the correct state - i.e. blue when going down, red 
+when going up. Also all functional needs objects updated to get the correct state when used.
+- Updated the needbar state in ol_defs.
+- Fixed sleeping so that you do not wake up until fatigue is at zero.
+- Can no longer zoom when 'needing'.
+
+Asset Changes
+=============
+
+Art
+---
+- added outerlight movie intro and disclaimer (only seen on Ship and OLTest builds)
+- removed help text from menus
+- new artwork for frontend menu system
+- crowbar sprites replaced with umbrella sprites
+
+Design
+------
+- Food, drink and bed added to the brig.
+- Added wanted posters to the security office.
+- Added wee drunk quiet guy to the brig.
+- Changed the security zones slightly, look out.
+- Added curtains you can hide behind and shoot through.
+- Added some cupboards to the kitchen, changed weapon placement slightly.
+- Added some openable chests to the cabins and removed problem one from corridor.
+- Changed rocket launcher area for easier access.
+- Added some stuff to upstairs area before you enter pool.
+- Added coffin and corpse to the hold.
+- Added secret area to shoot through in one of the cabins, look behind the picture.
+- Sanity config file updated. Entertainment and Psychiatrist make it positive.
+- Basic needs no longer affect your sanity.
+- Sanity tick speed moves slightly faster.
+- Added corruptible security guy.
+
+
+Sound
+-----
+- lowered volume of security alert sound
+- added snoring when you sleep
+
+18/11/03
+Changes for Ship V0012
+
+Coding Changes
+==============
+- Added Sanity, EventManager and Sanity psychiatrist.
+- Player no longer gets reward for self defence.
+- Player is fined 2000 for innocent kills.
+
+Asset Changes
+=============
+
+Art
+---
+- 
+
+Design
+------
+- Security zone added in the bank.
+
+Sound
+-----
+- 
+
+15/11/03
+Changes for Ship V0011
+
+Coding Changes
+==============
+- reenabled fix for using items through walls
+- changed money in dead AI's weaponboxes to simulate a mixture of rich and poor passengers
+
+Asset Changes
+=============
+
+Art
+---
+- Added new sprites for Sanity bar. Updated Hud.txt for these sprites.
+- 
+
+Design
+------
+- Added sanity.cfg file for updating the effects on sanity.
+- Added SickBay Psychiatrist to the functional entities. For a price they can 'cure' some insanity.
+- Moved switches so they work with new code.
+- Changed prison sentences, and reduced player needs.
+
+Sound
+-----
+- 
+
+13/11/03
+Changes for Ship V0010
+
+Coding Changes
+==============
+- Temporarily disabled fix for using items through walls till switches can be fixed
+- Stopped needs being processed when hud is hidden via 'hidehud' command
+- Added special definition MOVIEMAKINGBUILD for making movie, but undefined now as movie completed
+- Added spectator mode - type 'spectate' at the console
+- Removed crosshair from 3rd person view
+- added a light concussion to simulate ship swaying
+- spectator is in free camera mode even if other players connected
+- concussion effect increases when fatigue reaches a high level
+- added screenshake effect to pusher and pushee
+- added a small amount of damage to player/AI when pushed, so be careful who you push - they might just  die !
+- added screenshake when close to an exploding weapon
+- when very tired you might start to doze off now and again.. head for your bed quickly !
+
+Asset Changes
+=============
+
+Art
+---
+- Added 1 newly textured model
+- Removed 12 player models
+
+Design
+------
+-
+
+Sound
+-----
+- 
+
+08/11/03
+Changes for Ship V0009
+
+Coding Changes
+==============
+- Updated identities so that they don't imply gender
+- added more surnames and unrandomised so that duplicates won't appear
+- Items can no longer be used through walls
+- Quarry Changed text message sent in addition to audio cue
+- Can now deposit remaining cash at teller even if deposit amount is greater
+- Disabled Gibs
+- Weaponboxes created for all AI and Player deaths unless they have no money, no weapons and no ammo
+- Rules changed so that all ammo and weapons are packed into weaponboxes rather than held
+- Weaponboxes now carry money (either dead player's cash or a random amount for AI)
+- AI weaponboxes will carry a random amount of ammo and money
+- When a weaponbox is picked up a text message is displayed on HUD describing contents
+- Added console commands hidehud and showhud for making demo movie
+- Changed gamerules to allow playing sounds based on different textures/materials
+
+Asset Changes
+=============
+
+Art
+---
+- Added 5 newly textured models
+
+Design
+------
+- Added some scripted sequences, we have a rat in one of the tunnels, a Barney in the security office with a nice Sony laptop and the guy in the brig will wave at you when you go in.
+- Added func_banktellers for all your banking needs.
+
+Sound
+-----
+- 
+
+05/11/03
+Changes for Ship V0008
+
+Coding Changes
+==============
+- added fine for active weapon when arrested for trespass
+- Pushhands now only pushes AI and other players
+- Added funcbankteller for designers to use
+- Banking and concept of held and banked money added
+	- initial money is now in the bank when you spawn rather than held
+	- when you die all cash is lost so bank early !
+	- scores are now based on banked money
+	- banked money and cash displayed on HUD
+	- fines are taken from your bank account
+	- players can withdraw and deposit money at the bank tellers
+	- the bank will add/deduct interest from players at regular intervals
+- Weapon spawners no longer spawn random weapons until more control is available to designers
+
+Asset Changes
+=============
+Art
+---
+- hands texture on player's view of pushhands updated
+- added new sprite for banking
+
+Design
+------
+- Added escape route from pool into tunnel. 
+- Removed doors from lounge to main hall to try and assist AI movement.
+- Changed doors to slide due to roating problems.
+- Completely re-textured the ship.
+- Adding bank tellers, one in lounge, one in corridor.
+
+Sound
+-----
+- 
+
+28/10/03
+Changes for Ship V0007
+
+Coding Changes
+==============
+- AI now send a message to rid them of their overhead icons if they are killed while 'needing'.
+- AI now send an update to all players when they spawn in - they are added to the database of possible people to know.
+- Multiplayer costume changes now work correctly - removed all mention of the global ModelIndexPlayer from player.cpp
+- When a client disconnects they now send a message to get rid of their overhead icons.
+- Thirdperson camera is now allowed in Release version
+- After changing clothes, camera is returned to previous position rather that always
+  back to 1st person
+- Teleporting to Release Rooms now checks each release location before trying a radius
+  around a failed release location
+- increased attenuation so that footsteps are not heard from so far away on ladders
+- increased attenuation and decreased volume so push hands not heard so far away
+
+Asset Changes
+=============
+Art
+---
+-
+
+Design
+------
+- Added pool area to map (unfinished), weapons are stripped upon entering the changing rooms.
+- Stairs added to second level, shops around the bottom.
+
+Sound
+-----
+- Downsampled ambient sound files for 1deck.bsp
+- Downsampled intruder alert sound
+
+24/10/2003
+Changes for Ship V0006
+
+Coding Changes
+==============
+- Centred Justice messages
+- Centred KillInfo messages
+- KillInfo messages now reset when server restarts
+- Security on HUD now reset when server restarts
+- Set default idealyaw for thirdperson to be behind the player
+- Changed 3rd person camera not to intersect walls nearly as much
+- FuncWardrobe costume now changes 3 seconds before wait finishes so that player can view new model
+	View is swapped to 3rd person when change starts
+	View is swapped to 1st person when change finishes
+- Jailer teleport now won't intersect walls or place above another player/AI
+- Jailer gives random release message on HUD when released
+- Judge teleport now won't intersect walls or place above another player/AI
+- 'F' key will now toggle between First and Third person view
+- Weapon spawners now spawn a random weapon
+- Fixed needs sticking on dead bodies
+
+
+Asset Changes
+=============
+Art
+---
+- Added 3 new player models
+- Replaced weaponbox model
+- Removed gloves from player view of pushhands
+- Replaced crowbar with umbrella
+
+Design
+------
+- Updated map 1deck.bsp
+
+Sound
+-----
+- Added new ambient sounds for map 1deck.bsp
+
+21/10/2003
+Changes for Ship V0005
+
+Coding Changes
+==============
+- AI now shows icons on heads: needs satifisfaction.
+- AI now move to and satisfy needs.
+- Moved ShipDemo message registration to multiplayer gamerules. No longer depend on player. Fix for dedicated server crash.
+- Player cannot be used if they are being healed or are changing clothes.
+- Player now has 10000 starting cash.
+- KillInfo text moved down 20 pixels.
+- FuncWardrobe added.
+- FuncSickBayBed added.
+- Pickup key added to 'q' key as default. No longer zoom in to pick up.
+- Pushhands now works when zoomed in.
+- Money for kill. Takes away 2500 from weapon used to kill, adds 2500 to random other. No longer ticks up or averages.
+
+
+Asset Changes
+=============
+Art
+---
+- Added new spirit shipspri1 with icons for healing and changing clothes and updated hud.txt
+- Added new backgrounds for console and loading screen
+
+Design
+------
+- ShipDemo.FGD updated for info_nodes. Can now pick the hint type (for AI needs) from drop down list.
+- Added func_sickbay_bed to ShipDemo.fgd file.
+- Added func_wardrobe to ShipDemo.fgd file.
+- Added 1 deck map and micro area (cabin,lounge,deck)
+- Updated the WAD file
+- Changed eat side effect (poo need down from 40 to 20)
+- Added more hiding places for weapons and spread them over the ship
+- Added destination info nodes for the AI dudes
+
+Sound
+-----
+- 
+
+14/10/2003
+Changes for Ship V0004
+
+Coding Changes
+==============
+- AI names now appear in yellow rather than grey
+- New models - got rid of all the 'stupid' ones.
+- no respawn noise when weapon, ammo or item respawns
+- Added MoneyForKill class, removed the money for kill stuff from multiplay_gamerules.
+- Money for kill increments by 1000 for every minute a weapon has not been used for a kill.
+- Added HUD money for kill (which displays behind the scoreboard when tab is pressed).
+- 'Pineapple' grenade now explodes on contact.
+- Tripmine no longer has a beam. It is now a proximity mine.
+- Tripmine has no sound effects for charging up. Can be done stealthily.
+- AI and human players now have similar 'nothing in hands' pose.
+- No longer able to satisfy a need if that need is already at zero.
+- If you do not know the person they do not appear in the scoreboard or in the kill messages.
+- Money for kill scoreboard fix for different resolutions.
+
+Asset Changes
+=============
+Art
+---
+- Removed all the existing player models, replaced them with more useful ones.
+- Added new fonts.wad
+
+Design
+------
+- changed money for kill (crossbow devalued)
+- changed sentences for weapons
+
+
+Sound
+-----
+- 
+
+26/09/2003
+Changes for Ship V0003
+
+Coding Changes
+==============
+
+- right mouse button switches to observation mode with pushhands weapon
+- recognise distance increased when in observation mode, decreased when normal
+- can only pick up when in observation mode by clicking left button
+
+Asset Changes
+=============
+Art
+---
+- 
+
+Design
+------
+- changed money for kill
+- changed fines for weapons
+- changed fines for ammo
+
+Sound
+-----
+- 
+
+24/09/2003
+Changes For Ship V0002
+
+Coding Changes
+==============
+- switched multiplayer realistic fall damage on (added in server.scr)
+- Changed fatal fall speed to 800 from 1024 - you die if you fall off
+the crows nest on demomaps4 (also added to server.scr)
+- crowbar now kills in two hits, no gibbed body
+-   Weapon box is not created on death if your active weapon is pushhands.
+- You cannot drop pushhands weapon.
+- You can only see the persons name of someone who is alive.
+- Code-guard which checks to see if you have an active object before
+testing to see if you should be scared of the weapon being carried by the player.
+- Added a larger sentence countdown to hud when in prison.
+- changed justice release room to 1, 2 and 3 release rooms, MUST be added to map.
+- Get fines for killing Ship AI.
+- Put the ScoreInfo message in one function, fixed all calls to it.
+- Hud displays kill information: who you killed (hunter, quarry, innocent) and what
+money you gain or ar fined for the kill.
+- AI jumps periodically.
+- AI screams when you pull a weapon and runs away.
+- AI make 'ow' noises when you hit them.
+- If you die when in jail the justice system no longer continue processing you.
+- Attenuation for alerts to ALERT_STATIC for larger security areas.
+- enabled control of players so that they corpses are not left behind in 'rigor
+mortis' when satisfying a need.
+
+Asset Changes
+=============
+Art
+---
+- jesus face changed.
+
+Design
+------
+- demomaps4 change: core room opened out - ladder added
+- demomaps4 change: changed release points from jail (now 3 different ones).
+- demomaps4 change: more AI
+- demomaps4 change: butler added
+
+Sound
+-----
+- new intruder alert sound, now loops and stops when you leave zone.
+- new 'Quarry Obtained' sound.
+- AI scream when they see you with a weapon
+
+
+18/09/2003
+Changes for Ship V0001 
+
+Coding Changes
+==============
+
+- fixed AI identity seen when used: read and write a SHORT instead of a BYTE
+- fixed crash in ShipMate schedule selection: findNearestAlly was returning nothing.
+- shipKeyConfig.cfg added to bind the drop and holster keys 'automatically'
+- AI added: see ShipMate.cpp
+- removed FuncSecurityZone definition from trigger to its own header file
+- Added Justice system: judge, jailer, CHudJustice
+- Pushhands weapon weight added so that when you run out of ammo you swap to pushhands
+- security sprites added
+- changed version system - last valid version was V0.2.3
+- pushhands given back to player in the brig
+- player can be in 10 security zones at the same time
+- added ability to holster item
+- added ability to drop weapon
+- fixed money for kills, higher money, more weapons added
+
+
+Asset Changes
+=============
+Art
+---
+- knife model changed to hold nothing
+- Sprites for push hands
+
+Design
+------
+- demomaps4 added
+- new textures to ShipDemo.wad
+
+Sound
+-----
+- Converstation with AI

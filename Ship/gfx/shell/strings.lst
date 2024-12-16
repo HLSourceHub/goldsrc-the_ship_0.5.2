@@ -1,0 +1,50 @@
+// String patches
+
+147 " "		// Change screen size...
+148 " "
+149 " "
+150 " "
+
+185 " "		// Load a previously Saved Game
+186 " "
+187 " "
+188 " "
+189 " "		// Start a new game
+190 " "
+191 " "
+192 " "
+193 " "
+194 " "
+195 " "
+196 " "
+197 " "		// Quickstart
+198 " "
+
+
+235 "Abandon Ship ?"
+236 "Abandon Ship ?"
+
+286 " "		// Internet
+288 " "
+289 " "
+290 " "
+292 " "
+586 " "
+323 " "
+324 " "
+425 " "
+426 " "
+
+222 " "
+223 " "
+224 " "
+
+338 "Could not validate Half-Life"
+398 "This option will help you aim at your enemies, regarding the server has it enabled."
+391 "Check this box and enter password to disable visuals inappropriate for younger players and multiplayer.  Anyone wishing to change this setting will need to use this password. IMPORTANT NOTE:  If this is turned on, Science and Industry will not be playable."
+400 " "
+402 "www.outerlight.com"
+410 "This check box is inactive, and has no effect."
+416 "Visit the offical Outerlight web site"
+417 "www.outerlight.com"
+530 " "

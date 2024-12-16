@@ -1,0 +1,8 @@
+Welcome to The Ship
+
+http://www.theshiponline.com/
+
+Press 'I' for Server Info
+Press 'H' for Help
+
+Happy Hunting!

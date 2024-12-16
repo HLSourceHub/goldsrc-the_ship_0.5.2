@@ -1,0 +1,131 @@
+// NOTE:  THIS FILE IS AUTOMATICALLY REGENERATED, 
+//DO NOT EDIT THIS HEADER, YOUR COMMENTS WILL BE LOST IF YOU DO
+// Multiplayer options script
+//
+// Format:
+//  Version [float]
+//  Options description followed by 
+//  Options defaults
+//
+// Option description syntax:
+//
+//  "cvar" { "Prompt" { type [ type info ] } { default } }
+//
+//  type = 
+//   BOOL   (a yes/no toggle)
+//   STRING
+//   NUMBER
+//   LIST
+//
+// type info:
+// BOOL                 no type info
+// NUMBER       min max range, use -1 -1 for no limits
+// STRING       no type info
+// LIST          delimited list of options value pairs
+//
+//
+// default depends on type
+// BOOL is "0" or "1"
+// NUMBER is "value"
+// STRING is "value"
+// LIST is "index", where index "0" is the first element of the list
+
+
+// Half-Life Server Configuration Layout Script (stores last settings chosen, too)
+// File generated:  Fri Jul 30 01:54:15 PM
+//
+//
+// Cvar	-	Setting
+
+VERSION 1.0
+
+DESCRIPTION SERVER_OPTIONS
+{
+	"hostname"
+	{
+		"#Valve_Hostname"
+		{ STRING }
+		{ "Ship Server" }
+	}
+
+	"sv_password"
+	{
+		"#Valve_Server_Password"
+		{ STRING }
+		{ "" }
+	}
+
+	"maxplayers"
+	{
+		"#Valve_Max_Players"
+		{ NUMBER 1.000000 16.000000 }
+		{ "8.000000" }
+	}
+	
+	"mp_ship_GameType"
+	{
+		"Game Type"
+		{
+			LIST 
+			"Hunt" "0"
+			"Elimination" "1"
+		}
+		{ "0" }
+	}
+
+	"mp_moneystart"
+	{
+		"Player Starting Money"
+		{ NUMBER 0.000000 -1.000000 }
+		{ "2500.000000" }
+	}
+
+	"mp_moneylimit"
+	{
+		"Money Limit (min. 20000)"
+		{ NUMBER 0.000000 -1.000000 }
+		{ "50000.000000" }
+	}
+
+	"mp_fraglimit"
+	{
+		"Frag Limit"
+		{ NUMBER 0.000000 -1.000000 }
+		{ "30.000000" }
+	}
+
+	"mp_timelimit"
+	{
+		"Time Limit (Min.)"
+		{ NUMBER 0.000000 -1.000000 }
+		{ "30.000000" }
+	}
+
+	"mp_radar"
+	{
+		"Radar On"
+		{ BOOL }
+		{ "1" }
+	}
+
+	"mp_radarshowknown"
+	{
+		"Shown known passengers on Radar"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"mp_showQuarryRed"
+	{
+		"Quarry shown in Red on name and radar"
+		{ BOOL }
+		{ "1" }
+	}
+	
+	"mp_witnessArrestCount"
+	{
+		"Witness Arrest Count"
+		{ NUMBER 1.000000 9.000000 }
+		{ "1.000000" }
+	}
+}
